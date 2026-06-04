@@ -11,7 +11,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@phystack/cli": "^6.0.0",
+    "@phystack/cli": "^6.2.0",
     "http-server": "^14.1.1",
     "rimraf": "^5.0.7",
     "rsync": "^0.6.1"
