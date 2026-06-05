@@ -1,10 +1,10 @@
 # template-screen-html
 
-Starter template for plain HTML screen apps on the Phystack digital signage platform. Used by `@phystack/cli` to scaffold new projects -- not deployed directly.
+Starter template for plain HTML screen apps on the PhyStack digital signage platform. Used by `@phystack/cli` to scaffold new projects -- not deployed directly.
 
 ## Overview
 
-This template provides a minimal HTML screen app with built-in placeholder replacement for text and image settings. Developers use the Phystack CLI to scaffold a new project from this template, then customize the HTML, styles, and settings schema to build their screen app.
+This template provides a minimal HTML screen app with built-in placeholder replacement for text and image settings. Developers use the PhyStack CLI to scaffold a new project from this template, then customize the HTML, styles, and settings schema to build their screen app.
 
 The included `apply-settings.js` runtime listens for the `GridappReady` event from `screen-boot`, reads settings via `window.gridapp.getSettings()`, and replaces mustache-style placeholders (`{{txt:key:description}}`, `{{img:key:description}}`) throughout the DOM before firing `DOMContentLoaded`.
 
@@ -32,7 +32,7 @@ yarn install
 yarn start        # opens http-server on localhost:8080
 ```
 
-To build and publish to the Phystack app registry:
+To build and publish to the PhyStack app registry:
 
 ```bash
 yarn build        # copies files to build/ and runs phy app build
@@ -54,7 +54,7 @@ manifest.json           # PWA manifest
 
 ## Usage
 
-The Phystack CLI scaffolds a new HTML screen app from this template:
+The PhyStack CLI scaffolds a new HTML screen app from this template:
 
 ```bash
 phy app create --template html
@@ -82,9 +82,9 @@ Default schema properties included in this template:
 
 ## Settings Schema
 
-The `schema.json` file defines which fields appear in the Phystack console for content editors. It follows standard JSON Schema. The corresponding `default.settings.json` provides fallback values for local development.
+The `schema.json` file defines which fields appear in the PhyStack console for content editors. It follows standard JSON Schema. The corresponding `default.settings.json` provides fallback values for local development.
 
 ## Related Documentation
 
-- [Phystack CLI](https://github.com/phystack/cli) -- scaffolding and publishing commands
+- [PhyStack CLI](https://github.com/phystack/cli) -- scaffolding and publishing commands
 - [screen-boot](https://github.com/phystack/screen-boot) -- runtime that loads screen apps on devices
