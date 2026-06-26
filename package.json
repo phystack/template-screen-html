@@ -5,13 +5,10 @@
   "homepage": "./",
   "scripts": {
     "start": "http-server -o",
-    "build": "rimraf build && mkdir build && rsync -av --exclude-from=.gitignore . ./build && phy app build",
-    "pub": "phy app publish",
-    "upload-description": "phy app upload-description"
+    "build": "rimraf build && mkdir build && rsync -av --exclude-from=.gitignore . ./build && phy app package --out build/bundle.gridapp"
   },
   "dependencies": {},
   "devDependencies": {
-    "@phystack/cli": "^6.2.0",
     "http-server": "^14.1.1",
     "rimraf": "^5.0.7",
     "rsync": "^0.6.1"

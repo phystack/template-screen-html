@@ -1,6 +1,6 @@
 # template-screen-html
 
-Starter template for plain HTML screen apps on the PhyStack digital signage platform. Used by `@phystack/cli` to scaffold new projects -- not deployed directly.
+Starter template for plain HTML screen apps on the PhyStack digital signage platform. Used by the `phy` CLI to scaffold new projects -- not deployed directly.
 
 ## Overview
 
@@ -16,7 +16,7 @@ The included `apply-settings.js` runtime listens for the `GridappReady` event fr
 | Language | HTML, CSS, vanilla JavaScript |
 | Animations | animate.css |
 | Dev server | http-server |
-| Build | rsync + `phy app build` |
+| Build | rsync + `phy app package` |
 
 ## Prerequisites
 
@@ -35,8 +35,11 @@ yarn start        # opens http-server on localhost:8080
 To build and publish to the PhyStack app registry:
 
 ```bash
-yarn build        # copies files to build/ and runs phy app build
-yarn pub          # publishes to the registry
+yarn build        # copies files to build/ and packages into .gridapp
+
+# Publishing (requires global phy CLI: npm i -g @phystack/cli@dev)
+phy app build create <app-id> --file build/bundle.gridapp
+phy app build publish <app-id> <build-id>
 ```
 
 ## Project Structure
@@ -86,5 +89,5 @@ The `schema.json` file defines which fields appear in the PhyStack console for c
 
 ## Related Documentation
 
-- [PhyStack CLI](https://github.com/phystack/cli) -- scaffolding and publishing commands
+- [phy CLI](https://www.npmjs.com/package/@phystack/cli) -- scaffolding and publishing (install globally: `npm i -g @phystack/cli@dev`)
 - [screen-boot](https://github.com/phystack/screen-boot) -- runtime that loads screen apps on devices
